@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "683922615327",
+    "firebase_url": "https://canchasapp-907ab-default-rtdb.firebaseio.com",
+    "project_id": "canchasapp-907ab",
+    "storage_bucket": "canchasapp-907ab.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:683922615327:android:ea722d7550a024b05a792a",
+        "android_client_info": {
+          "package_name": "com.app.canchas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "683922615327-npj3l0o5h9rvq44teooe7a2v02f09nj0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwvZAAIyMajmH4pewA-QZG5HFXl0vKIHo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "683922615327-npj3l0o5h9rvq44teooe7a2v02f09nj0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
