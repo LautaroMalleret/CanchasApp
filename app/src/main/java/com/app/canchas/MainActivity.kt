@@ -3,6 +3,7 @@ package com.app.canchas
 import android.R
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
@@ -26,7 +27,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private val mainViewModel by viewModels<MainViewModel>()
 
-    private lateinit var canchaAdapter: CanchaAdapter
+//    private lateinit var canchaAdapter: CanchaAdapter
     private lateinit var recyclerView: RecyclerView
 
     private var SeleccionCiudad: String = ""
@@ -70,8 +71,10 @@ class MainActivity : AppCompatActivity() {
             binding.btnFiltrar.setOnClickListener {
                 lifecycleScope.launch {
                     mainViewModel.obtenerCanchasFiltradas(SeleccionCiudad, SeleccionNumeroCancha) //obtengo las canchas de firestore
-                    canchaAdapter = CanchaAdapter(mainViewModel.listaCanchas)
-                    recyclerView.adapter = canchaAdapter
+//                    Log.i("hola mvm filt", mainViewModel.listaCanchas.toString())
+
+                    val canchaAdapterFilter = CanchaAdapter(mainViewModel.listaCanchas)
+                    recyclerView.adapter = canchaAdapterFilter
                 }
             }
         }
@@ -85,8 +88,8 @@ class MainActivity : AppCompatActivity() {
         mainViewModel.cargarTodasLasCanchas() //obtengo las canchas de firestore
         mainViewModel.obtenerCanchas()
 
-
-        canchaAdapter = CanchaAdapter(mainViewModel.listaCanchas)
+//Log.i("hola mvm", mainViewModel.listaCanchas.toString())
+        val canchaAdapter = CanchaAdapter(mainViewModel.listaCanchas)
         recyclerView.adapter = canchaAdapter
 
     }
@@ -97,7 +100,7 @@ class MainActivity : AppCompatActivity() {
 
         filtroCiudad = binding.filtro1
         val ciudades = listOf(
-            "TODAS LAS CIUDADES", "ADROGUÉ", "ALMIRANTE BROWN", "AVELLANEDA", "BAHÍA BLANCA", "BANFIELD",
+            "CIUDADES", "ADROGUÉ", "ALMIRANTE BROWN", "AVELLANEDA", "BAHÍA BLANCA", "BANFIELD",
             "BECAAR", "BELLAVISTA", "BENAVIDEZ", "BERAZATEGUI", "BERNAL", "BOULOGNE",
             "CABA", "CASEROS", "CIUDAD EVITA", "CIUDADELA", "DON TORCUATO", "EL PALOMAR",
             "ESCOBAR", "ESTEBAN ECHEVERRIA", "EZEIZA", "FLORENCIO VARELA", "GARÍN",

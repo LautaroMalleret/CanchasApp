@@ -20,6 +20,8 @@ class MainViewModel @Inject constructor(
     suspend fun obtenerCanchas() {
         val lista = mutableListOf<Cancha>()                 //creo lista con valores solicitados
         lista.addAll(canchaRepository.getCanchas())
+//        Log.i("hola", lista.toString())
+
         listaCanchas = lista
     //        listaCanchas.addAll(canchaRepository.getCanchas())
 //        return canchaRepository.getCanchas()
@@ -27,7 +29,7 @@ class MainViewModel @Inject constructor(
 
 
     suspend fun obtenerCanchasFiltradas(filtroCiudad: String, filtroNumeroCancha: String){
-        val ciudad = if (filtroCiudad == "TODAS LAS CIUDADES") "" else filtroCiudad
+        val ciudad = if (filtroCiudad == "CIUDADES") "" else filtroCiudad
         val numeroCancha = if (filtroNumeroCancha == "Nº CANCHA") "" else filtroNumeroCancha
 
 

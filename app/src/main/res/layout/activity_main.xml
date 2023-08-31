@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+<!--    titulo-->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -11,43 +12,62 @@
         android:text="@string/app_name"
         android:textAlignment="center"
         android:textSize="30sp"
-        android:textStyle="bold"></TextView>
+        android:textStyle="bold"
+        android:background="#93FF7B"></TextView>
 
-    <SearchView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/white"
-        android:iconifiedByDefault="false"
-
-        android:queryHint="Buscar">
-
-    </SearchView>
-
+<!--filtros-->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
 
         <Spinner
             android:id="@+id/filtro1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            />
 
         <Spinner
             android:id="@+id/filtro2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            />
 
         <Button
             android:id="@+id/btnFiltrar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="end"
-            android:text="filtrar"></Button>
+            android:text="filtrar"
+            android:backgroundTint="#93FF7B"
+            android:textColor="@color/black"></Button>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Predios"></TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="Nº canchas"
+            android:textAlignment="center"></TextView>
+
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView_Canchas"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></androidx.recyclerview.widget.RecyclerView>
+        android:layout_height="match_parent"
+        ></androidx.recyclerview.widget.RecyclerView>
 
 </LinearLayout>
